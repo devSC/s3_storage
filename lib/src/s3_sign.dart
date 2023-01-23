@@ -70,7 +70,7 @@ Map<String, String> getAWSHeader(Map<String, String> headers) {
   final result = headers.entries
       .where((header) => header.key.toLowerCase().startsWith('x-amz'))
       .toList();
-  result.sort();
+  result.sort((a, b) => a.key.compareTo(b.key));
   return Map<String, String>.fromEntries(result);
 }
 
