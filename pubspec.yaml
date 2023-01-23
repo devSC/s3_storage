@@ -1,6 +1,6 @@
 name: s3_storage
 description: S3 (AWS, MinIO) Dart Client SDK that provides simple APIs to access any Amazon S3 compatible object storage server.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/MindMayhem/s3_storage
 issue_tracker: https://github.com/MindMayhem/s3_storage
 
