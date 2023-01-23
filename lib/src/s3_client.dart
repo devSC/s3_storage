@@ -112,8 +112,6 @@ class StorageResponse extends BaseResponse {
   }
 }
 
-enum SigningType { V2, V4 }
-
 class StorageClient {
   StorageClient(this.s3storage, this.signingType) {
     anonymous = s3storage.accessKey.isEmpty && s3storage.secretKey.isEmpty;

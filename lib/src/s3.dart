@@ -14,6 +14,8 @@ import 'package:s3_storage/src/utils.dart';
 import 'package:xml/xml.dart' as xml;
 import 'package:xml/xml.dart' show XmlElement;
 
+enum SigningType { V2, V4 }
+
 class S3Storage {
   /// Initializes a new client object.
   S3Storage({
