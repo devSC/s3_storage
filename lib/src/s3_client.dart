@@ -163,7 +163,7 @@ class StorageClient {
     } else {
       request.headers.addAll({
         'user-agent': s3storage.userAgent,
-        'date': dateV2(date),
+        'date': toRfc7231Time(date),
       });
       final authorization = signV2(s3storage, request, date,
           request.url.toString().replaceAll(request.url.origin, ''),

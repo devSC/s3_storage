@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
-import 'package:intl/intl.dart';
 import 'package:s3_storage/src/s3.dart';
 import 'package:s3_storage/src/s3_client.dart';
 import 'package:s3_storage/src/s3_errors.dart';
@@ -38,8 +37,7 @@ String signV2(
   String? md5,
   String? contentType,
 }) {
-  final date =
-      '${DateFormat('EEE, d MMM y H:mm:ss').format(DateTime.now().toUtc())} GMT';
+  final date = toRfc7231Time(DateTime.now().toUtc());
   final awsHeaders = getAWSHeader(request.headers);
   final header =
       '${request.method}\n${md5 ?? ''}\n${contentType ?? ''}\n$date\n${awsHeaders.isNotEmpty ? '${awsHeaders.entries.map((e) => '${e.key}:${e.value}').join('\n')}\n' : ''}$requestPath';
